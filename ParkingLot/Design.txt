@@ -1,0 +1,48 @@
+REQUIREMENTS:
+1.) Parking lot have multiple floors (Configurable)
+2.) Floor have multiple spots (Configurable)
+3.) Spots is specific for a type of vehicle
+4.) Park/Unpark a vehicle from a spot
+5.) For a vehicle, find first available spot starting from bottom floor to top
+6.) Every vehicle is given a ticket
+7.) Displays all the free spots per floor for a specific vehicle type
+8.) Displays all the occupied spots per floor for a specific vehicle type
+
+ASSUMPTIONS/LIMITATIONS:
+1.) Each floor have same number of spots
+2.) Single ticket for single vehicle
+3.) spot-1 is reserved for Truck, spot-2,3 are reserved for car, rest are reserved for bikes
+4.) Fixed prices for bike, car and bus respectively
+3.) More to come...xD
+
+COMPONENTS
+1.) Parking Lot
+    1.1) Every parking lot have parking_lot_id, number_of_floors, number_of_spots_per_floor, floor_structure, ticket_structure
+    1.2) Add a floor
+    1.3) Get all floors
+    1.4) Park/Un-park a vehicle
+    1.5) Register/Un-Register a ticket for a vehicle (All calculations are done)
+    1.6) Get location (floor, spot) for a vehicle
+    
+2.) Parking Floor
+    2.1) Every parking floor have floor_id, slot_structure
+    2.2) Add a parking spot
+    2.3) Update status of spot (occupied/free)
+    2.4) Get all occupied/unoccupied slots for a particular floor
+
+3.) Parking Spot
+    3.1) Every spot have spot_id, floor_id, vehicle, spot_type, is_occupied
+    3.2) Each spot is uniquely identified
+    3.3) Set/Get a type to/of a spot
+    3.4) Assign/Remove a vehicle from a spot
+    3.5) Get a vehicle from a spot
+    3.6) Get floor for a spot
+
+4.) Vehicle
+    4.1) Every vehicle have vehicle_reg_no, type_of_vehicle, color
+    4.2) Get type of vehicle: "Bike", "Car", "Truck"
+
+5.) Ticket
+    5.1) Every ticket have ticket_id, floor_id, slot_id, vehicle_reg_no, amount, entry_time, exit_time
+    5.2) Get amount paid
+    5.3) Has the ticket expired? -> To check fraud
